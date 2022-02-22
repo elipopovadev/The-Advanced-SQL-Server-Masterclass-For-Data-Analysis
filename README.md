@@ -1,4 +1,4 @@
-#The Advanced SQL Server Masterclass For Data Analysis
+ # The Advanced SQL Server Masterclass For Data Analysis
 
 Course Content:
     Installing SQL Server and SQL Server Management Studio
