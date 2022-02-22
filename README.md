@@ -15,5 +15,5 @@ Course Content:
     Defining your own SQL functions
     Creating stored procedures for flexible, repeatable analysis
     Supercharge your SQL knowledge with procedural programming techniques like variables and IF statements
-    Writing code that writes code, with Dynamic SQL
+    Writing code that writes code, with Dynamic SQL   
 
