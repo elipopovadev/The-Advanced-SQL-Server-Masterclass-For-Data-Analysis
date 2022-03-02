@@ -28,7 +28,7 @@ Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.Pro
 SELECT Production.Product.[Name] AS ProductName, ListPrice, 
 Production.ProductSubcategory.[Name] AS ProductSubcategory,
 Production.ProductCategory.[Name] AS ProductCategory,
-[Price Rank] = Row_Number() OVER(ORDER BY ListPrice DESC)
+[Price Rank] = ROW_NUMBER() OVER(ORDER BY ListPrice DESC)
 FROM Production.Product
 JOIN Production.ProductSubcategory ON
 Production.Product.ProductSubcategoryID = Production.ProductSubcategory.ProductSubcategoryID
@@ -43,8 +43,8 @@ Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.Pro
 SELECT Production.Product.[Name] AS ProductName, ListPrice, 
 Production.ProductSubcategory.[Name] AS ProductSubcategory,
 Production.ProductCategory.[Name] AS ProductCategory,
-[Price Rank] = Row_Number() OVER(ORDER BY ListPrice DESC),
-[Category Price Rank] = Row_Number() OVER(PARTITION BY Production.ProductCategory.[Name] ORDER BY ListPrice DESC)
+[Price Rank] = ROW_NUMBER() OVER(ORDER BY ListPrice DESC),
+[Category Price Rank] = ROW_NUMBER() OVER(PARTITION BY Production.ProductCategory.[Name] ORDER BY ListPrice DESC)
 FROM Production.Product
 JOIN Production.ProductSubcategory ON
 Production.Product.ProductSubcategoryID = Production.ProductSubcategory.ProductSubcategoryID
@@ -59,8 +59,8 @@ Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.Pro
 SELECT Production.Product.[Name] AS ProductName, ListPrice, 
 Production.ProductSubcategory.[Name] AS ProductSubcategory,
 Production.ProductCategory.[Name] AS ProductCategory,
-[Price Rank] = Row_Number() OVER(ORDER BY ListPrice DESC),
-[Category Price Rank] = Row_Number() OVER(PARTITION BY Production.ProductCategory.[Name] ORDER BY ListPrice DESC),
+[Price Rank] = ROW_NUMBER() OVER(ORDER BY ListPrice DESC),
+[Category Price Rank] = ROW_NUMBER() OVER(PARTITION BY Production.ProductCategory.[Name] ORDER BY ListPrice DESC),
 [Top 5 Price In Category] =
 CASE 
 		WHEN ROW_NUMBER() OVER(PARTITION BY Production.ProductCategory.[Name] ORDER BY ListPrice DESC) <= 5 THEN 'Yes'
