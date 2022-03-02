@@ -71,3 +71,4 @@ JOIN Production.ProductSubcategory ON
 Production.Product.ProductSubcategoryID = Production.ProductSubcategory.ProductSubcategoryID
 JOIN Production.ProductCategory ON
 Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.ProductCategoryID
+
