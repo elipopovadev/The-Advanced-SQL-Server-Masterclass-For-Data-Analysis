@@ -4,12 +4,12 @@ GO
 
 -- Exercise 1
 -- Create a query with the following columns (feel free to borrow your code from Exercise 1 of the PARTITION BY exercises):
--- ìNameî from the Production.Product table, which can be alised as ìProductNameî
--- ìListPriceî from the Production.Product table
--- ìNameî from the C table, which can be alised as ìProductSubcategoryî*
--- ìNameî from the Production.Category table, which can be alised as ìProductCategoryî**
--- *Join Production.ProductSubcategory to Production.Product on ìProductSubcategoryIDî
--- **Join Production.ProductCategory to ProductSubcategory on ìProductCategoryIDî
+-- ‚ÄúName‚Äù from the Production.Product table, which can be alised as ‚ÄúProductName‚Äù
+-- ‚ÄúListPrice‚Äù from the Production.Product table
+-- ‚ÄúName‚Äù from the C table, which can be alised as ‚ÄúProductSubcategory‚Äù*
+-- ‚ÄúName‚Äù from the Production.Category table, which can be alised as ‚ÄúProductCategory‚Äù**
+-- *Join Production.ProductSubcategory to Production.Product on ‚ÄúProductSubcategoryID‚Äù
+-- **Join Production.ProductCategory to ProductSubcategory on ‚ÄúProductCategoryID‚Äù
 SELECT Production.Product.[Name] AS ProductName, ListPrice, 
 Production.ProductSubcategory.[Name] AS ProductSubcategory,
 Production.ProductCategory.[Name] AS ProductCategory
@@ -38,7 +38,7 @@ Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.Pro
 
 -- Exercise 3
 -- Enhance your query from Exercise 2 by adding a derived column called
--- "Category Price Rank" that ranks all products by ListPrice ñ within each category - in descending order.
+-- "Category Price Rank" that ranks all products by ListPrice ‚Äì within each category - in descending order.
 -- In other words, every product within a given category should be ranked relative to other products in the same category.
 SELECT Production.Product.[Name] AS ProductName, ListPrice, 
 Production.ProductSubcategory.[Name] AS ProductSubcategory,
@@ -54,8 +54,8 @@ Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.Pro
 
 -- Exercise 4
 -- Enhance your query from Exercise 3 by adding a derived column called
--- "Top 5 Price In Category" that returns the string ìYesî if a product has one of the top 5 list prices in its product category,
--- and ìNoî if it does not. You can try incorporating your logic from Exercise 3 into a CASE statement to make this work.
+-- "Top 5 Price In Category" that returns the string ‚ÄúYes‚Äù if a product has one of the top 5 list prices in its product category,
+-- and ‚ÄúNo‚Äù if it does not. You can try incorporating your logic from Exercise 3 into a CASE statement to make this work.
 SELECT Production.Product.[Name] AS ProductName, ListPrice, 
 Production.ProductSubcategory.[Name] AS ProductSubcategory,
 Production.ProductCategory.[Name] AS ProductCategory,
