@@ -38,4 +38,3 @@ FOR XML PATH('')
 1, 1, '')
 FROM Production.ProductSubcategory AS A
 
-
