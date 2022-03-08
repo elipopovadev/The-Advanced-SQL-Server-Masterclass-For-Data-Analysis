@@ -43,3 +43,4 @@ PIVOT(
 AVG(VacationHours)
 FOR JobTitle IN([Sales Representative], [Buyer], [Janitor])
 ) AS B
+
