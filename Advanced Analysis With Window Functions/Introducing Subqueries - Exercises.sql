@@ -19,9 +19,11 @@ GO
 -- The last step will be to apply the appropriate criteria to the field you created with your Window Function.
 SELECT PurchaseOrderID, VendorID, OrderDate, TaxAmt, Freight, TotalDue
 FROM
-(SELECT PurchaseOrderID, VendorID, OrderDate, TaxAmt, Freight, TotalDue, 
+(
+SELECT PurchaseOrderID, VendorID, OrderDate, TaxAmt, Freight, TotalDue, 
 Ranking = ROW_NUMBER() OVER(PARTITION BY VendorID ORDER BY TotalDue DESC)
-FROM Purchasing.PurchaseOrderHeader) AS A
+FROM Purchasing.PurchaseOrderHeader
+) AS A
 WHERE A.Ranking <= 3
 
 
@@ -36,8 +38,10 @@ WHERE A.Ranking <= 3
 -- and which one might be best suited to help you here.
 SELECT PurchaseOrderID, VendorID, OrderDate, TaxAmt, Freight, TotalDue
 FROM
-(SELECT PurchaseOrderID, VendorID, OrderDate, TaxAmt, Freight, TotalDue, 
+(
+SELECT PurchaseOrderID, VendorID, OrderDate, TaxAmt, Freight, TotalDue, 
 Ranking = DENSE_RANK() OVER(PARTITION BY VendorID ORDER BY TotalDue DESC)
-FROM Purchasing.PurchaseOrderHeader) AS A
+FROM Purchasing.PurchaseOrderHeader
+) AS A
 WHERE A.Ranking <= 3
 
