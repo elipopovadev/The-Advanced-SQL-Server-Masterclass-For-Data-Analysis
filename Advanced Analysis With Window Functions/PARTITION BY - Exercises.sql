@@ -5,26 +5,20 @@ GO
 -- Exercise 1
 -- Create a query with the following columns:
 -- “Name” from the Production.Product table, which can be alised as “ProductName”
-SELECT [Production].[Product].[Name] AS ProductName
-FROM [Production].[Product]
-
 -- “ListPrice” from the Production.Product table
-SELECT ListPrice
-FROM [Production].[Product]
-
 -- “Name” from the Production.ProductSubcategory table, which can be alised as “ProductSubcategory”.
 -- Join Production.ProductSubcategory to Production.Product on “ProductSubcategoryID”
-SELECT Production.ProductSubcategory.[Name] AS ProductSubcategory
-FROM [Production].[ProductSubcategory]
-JOIN [Production].[Product] ON
-[Production].[Product].ProductSubcategoryID = [ProductSubcategory].ProductSubcategoryID
-
 -- “Name” from the Production.Category table, which can be alised as “ProductCategory”**
 -- **Join Production.ProductCategory to ProductSubcategory on “ProductCategoryID”
-SELECT [Production].[ProductCategory].[Name] AS ProductCategory
-FROM [Production].[ProductCategory]
+SELECT [Production].[Product].[Name] AS ProductName,
+[Production].[Product].ListPrice, 
+[Production].[ProductSubcategory].[Name] AS ProductSubcategory,
+[Production].[ProductCategory].[Name] AS ProductCategory
+FROM [Production].[Product]
 JOIN [Production].[ProductSubcategory] ON
-[Production].[ProductSubcategory].ProductCategoryID = [Production].[ProductCategory].ProductCategoryID
+[Production].[ProductSubcategory].ProductSubcategoryID = [Production].[Product].ProductSubcategoryID
+JOIN [Production].[ProductCategory] ON
+[Production].[ProductCategory].ProductCategoryID = [Production].[ProductSubcategory].ProductCategoryID
 
 
 -- Exercise 2
