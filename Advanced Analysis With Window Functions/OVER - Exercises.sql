@@ -3,21 +3,9 @@ GO
 
 -- Exercise 1
 -- FirstName and LastName, from the Person.Person table**
-SELECT FirstName, LastName
-FROM [Person].[Person];
-
 -- JobTitle, from the HumanResources.Employee table**
-SELECT JobTitle
-FROM [HumanResources].[Employee];
-
 -- Rate, from the HumanResources.EmployeePayHistory table**
-SELECT Rate
-FROM [HumanResources].[EmployeePayHistory];
-
 -- A derived column called "AverageRate" that returns the average of all values in the "Rate" column, in each row
-SELECT AverageRate = AVG(Rate) OVER()
-FROM [HumanResources].[EmployeePayHistory];
-
 -- All the above tables can be joined on BusinessEntityID
 SELECT FirstName, LastName, JobTitle, Rate, AverageRate = AVG(Rate) OVER()
 FROM [Person].[Person]
@@ -25,7 +13,6 @@ JOIN [HumanResources].[Employee] ON
 [Person].[Person].BusinessEntityID = [HumanResources].[Employee].BusinessEntityID
 JOIN [HumanResources].[EmployeePayHistory] ON
 [HumanResources].[Employee].BusinessEntityID = [HumanResources].[EmployeePayHistory].BusinessEntityID;
-
 
 -- Exercise 2
 -- Enhance your query from Exercise 1 by adding a derived column called 
