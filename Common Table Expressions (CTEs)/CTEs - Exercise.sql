@@ -97,4 +97,3 @@ FROM AvgSalesMinusTop10 A
 JOIN AvgPurchasesMinusTop10 B ON A.OrderMonth = B.OrderMonth
 ORDER BY 1
 
-
