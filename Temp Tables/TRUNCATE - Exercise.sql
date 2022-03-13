@@ -36,6 +36,7 @@ OrderType VARCHAR(32),
 TotalDue MONEY
 )
 
+
 --Insert sales data:
 INSERT INTO #AvgOrdersMinusTop10
 (
