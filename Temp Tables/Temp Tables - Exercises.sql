@@ -95,3 +95,4 @@ DROP TABLE #Sales
 DROP TABLE #AvgSalesMinusTop10
 DROP TABLE #Purchases
 DROP TABLE #AvgPurchasesMinusTop10
+
