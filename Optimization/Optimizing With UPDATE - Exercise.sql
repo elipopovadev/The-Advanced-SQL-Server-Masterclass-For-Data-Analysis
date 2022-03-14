@@ -2,8 +2,8 @@ USE AdventureWorks2019
 GO
 
 --Exercise
--- Making use of temp tables and UPDATE statements, re-write an optimized version of the query in the "Optimizing With UPDATE - Exercise Starter Code.sql"
--- file, which you'll find in the resources for this section.
+-- Making use of temp tables and UPDATE statements, re-write an optimized version of the query in the
+-- "Optimizing With UPDATE - Exercise Starter Code.sql" file, which you'll find in the resources for this section.
 SELECT 
 	   A.BusinessEntityID
       ,A.Title
