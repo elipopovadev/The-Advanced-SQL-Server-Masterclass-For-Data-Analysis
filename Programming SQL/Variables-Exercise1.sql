@@ -9,11 +9,11 @@ DECLARE @MaxVacationHours INT
 SELECT @MaxVacationHours = (SELECT MAX(VacationHours) FROM AdventureWorks2019.HumanResources.Employee)
 
 SELECT
-	  BusinessEntityID,
+      BusinessEntityID,
       JobTitle,
       VacationHours,
-	  MaxVacationHours = @MaxVacationHours,
-	  PercentOfMaxVacationHours = (VacationHours * 1.0) / @MaxVacationHours
+      MaxVacationHours = @MaxVacationHours,
+      PercentOfMaxVacationHours = (VacationHours * 1.0) / @MaxVacationHours
 
 FROM AdventureWorks2019.HumanResources.Employee
 
