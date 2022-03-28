@@ -10,8 +10,7 @@ ELSE
 		SELECT 'Farewell For Now!'
 	END
 
-
-
+s
 --IF Statement - stored procedure example
 ALTER PROCEDURE dbo.OrdersReport(@TopN INT, @OrderType INT)
 
