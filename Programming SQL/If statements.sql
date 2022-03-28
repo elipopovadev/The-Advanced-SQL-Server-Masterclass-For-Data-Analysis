@@ -62,7 +62,6 @@ BEGIN
 END
 
 
-
 --Calling the modified stored procedure
 EXEC dbo.OrdersReport 20,1
 EXEC dbo.OrdersReport 15,2
