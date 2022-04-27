@@ -1,6 +1,6 @@
  # The Advanced SQL Server Masterclass For Data Analysis
 
-Course Content:
+### Course Content:
 
 * Installing SQL Server and SQL Server Management Studio
 * Window Functions
